@@ -1,5 +1,5 @@
 # About 
-sample website page
+KOOPSIKLO sample website 
 
 # Contributors
 - 
