@@ -1,0 +1,1185 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - KOOPSIKLO Premium Dealership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'koops-green': '#00ff88',
+                        'koops-dark': '#0a0a0a',
+                        'koops-gray': '#1a1a1a'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-koops-dark text-white">
+
+<!-- ========================================
+     HTML STRUCTURE - NAVIGATION SECTION
+     ======================================== -->
+<nav class="bg-koops-gray shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="/" class="text-2xl font-bold text-koops-green">KOOPSIKLO</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="#motorcycles" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Motorcycles</a>
+                    <a href="#services" class="text-koops-green border-b-2 border-koops-green px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                    <a href="#parts" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Parts</a>
+                    <a href="#preowned" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Pre-Owned</a>
+                    <a href="#portal" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Customer Portal</a>
+                    <a href="#stores" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Find a Store</a>
+                    <a href="#contact" class="bg-koops-green text-koops-dark px-4 py-2 rounded-md text-sm font-medium hover:bg-green-400 transition-colors">Contact Us</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white hover:text-koops-green">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden bg-koops-gray">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#motorcycles" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Motorcycles</a>
+            <a href="#services" class="text-koops-green block px-3 py-2 rounded-md text-base font-medium">Services</a>
+            <a href="#parts" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Parts</a>
+            <a href="#preowned" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Pre-Owned</a>
+            <a href="#portal" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Customer Portal</a>
+            <a href="#stores" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Find a Store</a>
+            <a href="#contact" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ========================================
+     HTML STRUCTURE - PAGE HERO SECTION
+     ======================================== -->
+<section class="relative bg-gradient-to-r from-koops-dark via-koops-gray to-koops-dark pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                <span class="text-koops-green">EXPERT</span><br>
+                <span class="text-white">SERVICES</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Professional motorcycle maintenance and repair services by certified technicians. Keep your ride in perfect condition.
+            </p>
+            <div class="flex justify-center items-center space-x-6 text-gray-300 flex-wrap gap-4">
+                <span><i class="fas fa-wrench text-koops-green mr-2"></i>Expert Technicians</span>
+                <span><i class="fas fa-clock text-koops-green mr-2"></i>Quick Turnaround</span>
+                <span><i class="fas fa-certificate text-koops-green mr-2"></i>Certified Service</span>
+                <span><i class="fas fa-shield-alt text-koops-green mr-2"></i>Warranty Backed</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - QUICK BOOKING SECTION
+     ======================================== -->
+<section class="bg-koops-gray py-8 sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-koops-dark rounded-xl p-6 shadow-2xl">
+            <h3 class="text-2xl font-bold text-center mb-6 text-koops-green">Quick Service Booking</h3>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div>
+                    <select id="service-type" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                        <option value="">Select Service</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="repair">Repair</option>
+                        <option value="inspection">Inspection</option>
+                        <option value="customization">Customization</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" id="motorcycle-model" placeholder="Motorcycle Model" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                </div>
+                <div>
+                    <input type="date" id="preferred-date" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                </div>
+                <div>
+                    <select id="time-slot" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                        <option value="">Time Slot</option>
+                        <option value="morning">Morning (8AM-12PM)</option>
+                        <option value="afternoon">Afternoon (1PM-5PM)</option>
+                        <option value="evening">Evening (6PM-8PM)</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="book-service-btn" class="w-full bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                        <i class="fas fa-calendar-plus mr-2"></i>BOOK NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - SERVICE CATEGORIES SECTION
+     ======================================== -->
+<section class="py-12 bg-koops-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white mb-4">Our Service Categories</h2>
+            <p class="text-xl text-gray-300">Comprehensive motorcycle care for every need</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Maintenance Services -->
+            <div class="service-category bg-koops-gray rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300 cursor-pointer" data-category="maintenance">
+                <div class="text-6xl text-koops-green mb-6">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Maintenance</h3>
+                <p class="text-gray-300 mb-6">Regular upkeep to keep your motorcycle running smoothly</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>• Oil Change</li>
+                    <li>• Brake Service</li>
+                    <li>• Chain Maintenance</li>
+                    <li>• Tire Service</li>
+                </ul>
+                <button class="bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold hover:bg-green-400 transition-colors w-full">
+                    VIEW SERVICES
+                </button>
+            </div>
+            
+            <!-- Repair Services -->
+            <div class="service-category bg-koops-gray rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300 cursor-pointer" data-category="repair">
+                <div class="text-6xl text-koops-green mb-6">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Repair</h3>
+                <p class="text-gray-300 mb-6">Expert diagnosis and repair for all motorcycle issues</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>• Engine Repair</li>
+                    <li>• Electrical Issues</li>
+                    <li>• Transmission</li>
+                    <li>• Suspension</li>
+                </ul>
+                <button class="bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold hover:bg-green-400 transition-colors w-full">
+                    VIEW SERVICES
+                </button>
+            </div>
+            
+            <!-- Inspection Services -->
+            <div class="service-category bg-koops-gray rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300 cursor-pointer" data-category="inspection">
+                <div class="text-6xl text-koops-green mb-6">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Inspection</h3>
+                <p class="text-gray-300 mb-6">Thorough safety and performance inspections</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>• Safety Inspection</li>
+                    <li>• Pre-Purchase Check</li>
+                    <li>• Performance Test</li>
+                    <li>• Diagnostic Scan</li>
+                </ul>
+                <button class="bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold hover:bg-green-400 transition-colors w-full">
+                    VIEW SERVICES
+                </button>
+            </div>
+            
+            <!-- Customization Services -->
+            <div class="service-category bg-koops-gray rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300 cursor-pointer" data-category="customization">
+                <div class="text-6xl text-koops-green mb-6">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Customization</h3>
+                <p class="text-gray-300 mb-6">Personalize your ride with custom modifications</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                    <li>• Custom Paint</li>
+                    <li>• Performance Mods</li>
+                    <li>• Accessories</li>
+                    <li>• Body Kits</li>
+                </ul>
+                <button class="bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold hover:bg-green-400 transition-colors w-full">
+                    VIEW SERVICES
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - DETAILED SERVICES SECTION
+     ======================================== -->
+<section id="detailed-services" class="py-16 bg-koops-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white mb-4">Service Details & Pricing</h2>
+            <p class="text-xl text-gray-300">Transparent pricing for all our professional services</p>
+        </div>
+        
+        <!-- Service Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="service-tab active bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold" data-service="all">
+                All Services
+            </button>
+            <button class="service-tab bg-koops-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-service="maintenance">
+                Maintenance
+            </button>
+            <button class="service-tab bg-koops-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-service="repair">
+                Repair
+            </button>
+            <button class="service-tab bg-koops-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-service="inspection">
+                Inspection
+            </button>
+            <button class="service-tab bg-koops-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-service="customization">
+                Customization
+            </button>
+        </div>
+        
+        <!-- Services Grid -->
+        <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Oil Change Service -->
+            <div class="service-card bg-koops-dark rounded-xl p-6 shadow-2xl hover:transform hover:scale-105 transition-all duration-300" data-service="maintenance" data-price="800">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl text-koops-green">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <span class="bg-koops-green text-koops-dark px-3 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Oil Change Service</h3>
+                <p class="text-gray-300 mb-4">Complete engine oil and filter replacement with quality lubricants</p>
+                <div class="space-y-2 text-sm text-gray-400 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-koops-green mr-2"></i>
+                        <span>Duration: 30 minutes</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools text-koops-green mr-2"></i>
+                        <span>Includes: Oil + Filter + Labor</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-koops-green mr-2"></i>
+                        <span>Warranty: 3 months</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-2xl font-bold text-koops-green">₱800</span>
+                    <div class="flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-2">(4.9)</span>
+                    </div>
+                </div>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    BOOK SERVICE
+                </button>
+            </div>
+            
+            <!-- Brake Service -->
+            <div class="service-card bg-koops-dark rounded-xl p-6 shadow-2xl hover:transform hover:scale-105 transition-all duration-300" data-service="maintenance" data-price="1500">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl text-koops-green">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">SAFETY</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Brake Service</h3>
+                <p class="text-gray-300 mb-4">Complete brake inspection, pad replacement, and fluid change</p>
+                <div class="space-y-2 text-sm text-gray-400 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-koops-green mr-2"></i>
+                        <span>Duration: 1-2 hours</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools text-koops-green mr-2"></i>
+                        <span>Includes: Pads + Fluid + Labor</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-koops-green mr-2"></i>
+                        <span>Warranty: 6 months</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-2xl font-bold text-koops-green">₱1,500</span>
+                    <div class="flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-2">(4.8)</span>
+                    </div>
+                </div>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    BOOK SERVICE
+                </button>
+            </div>
+            
+            <!-- Engine Diagnostic -->
+            <div class="service-card bg-koops-dark rounded-xl p-6 shadow-2xl hover:transform hover:scale-105 transition-all duration-300" data-service="repair" data-price="1200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl text-koops-green">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">DIAGNOSTIC</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Engine Diagnostic</h3>
+                <p class="text-gray-300 mb-4">Comprehensive engine analysis using advanced diagnostic tools</p>
+                <div class="space-y-2 text-sm text-gray-400 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-koops-green mr-2"></i>
+                        <span>Duration: 45 minutes</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools text-koops-green mr-2"></i>
+                        <span>Includes: Full Report + Recommendations</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-koops-green mr-2"></i>
+                        <span>Warranty: Report Guaranteed</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-2xl font-bold text-koops-green">₱1,200</span>
+                    <div class="flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class="text-gray-400 ml-2">(4.6)</span>
+                    </div>
+                </div>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    BOOK SERVICE
+                </button>
+            </div>
+            
+            <!-- Safety Inspection -->
+            <div class="service-card bg-koops-dark rounded-xl p-6 shadow-2xl hover:transform hover:scale-105 transition-all duration-300" data-service="inspection" data-price="600">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl text-koops-green">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">REQUIRED</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Safety Inspection</h3>
+                <p class="text-gray-300 mb-4">Mandatory safety check for registration and peace of mind</p>
+                <div class="space-y-2 text-sm text-gray-400 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-koops-green mr-2"></i>
+                        <span>Duration: 20 minutes</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools text-koops-green mr-2"></i>
+                        <span>Includes: Certificate + Report</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-koops-green mr-2"></i>
+                        <span>Warranty: Official Certificate</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-2xl font-bold text-koops-green">₱600</span>
+                    <div class="flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-2">(5.0)</span>
+                    </div>
+                </div>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    BOOK SERVICE
+                </button>
+            </div>
+            
+            <!-- Custom Paint Job -->
+            <div class="service-card bg-koops-dark rounded-xl p-6 shadow-2xl hover:transform hover:scale-105 transition-all duration-300" data-service="customization" data-price="15000">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl text-koops-green">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">CUSTOM</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Custom Paint Job</h3>
+                <p class="text-gray-300 mb-4">Professional custom paint work with premium materials</p>
+                <div class="space-y-2 text-sm text-gray-400 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-koops-green mr-2"></i>
+                        <span>Duration: 3-5 days</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools text-koops-green mr-2"></i>
+                        <span>Includes: Design + Paint + Clear Coat</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-koops-green mr-2"></i>
+                        <span>Warranty: 2 years</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-2xl font-bold text-koops-green">₱15,000</span>
+                    <div class="flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-2">(4.9)</span>
+                    </div>
+                </div>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    BOOK SERVICE
+                </button>
+            </div>
+            
+            <!-- Performance Tuning -->
+            <div class="service-card bg-koops-dark rounded-xl p-6 shadow-2xl hover:transform hover:scale-105 transition-all duration-300" data-service="customization" data-price="8000">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-3xl text-koops-green">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold">PERFORMANCE</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Performance Tuning</h3>
+                <p class="text-gray-300 mb-4">ECU tuning and performance modifications for maximum power</p>
+                <div class="space-y-2 text-sm text-gray-400 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-koops-green mr-2"></i>
+                        <span>Duration: 4-6 hours</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools text-koops-green mr-2"></i>
+                        <span>Includes: ECU Tune + Dyno Test</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-koops-green mr-2"></i>
+                        <span>Warranty: 1 year</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-2xl font-bold text-koops-green">₱8,000</span>
+                    <div class="flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-2">(4.7)</span>
+                    </div>
+                </div>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    BOOK SERVICE
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - SERVICE PACKAGES SECTION
+     ======================================== -->
+<section class="py-16 bg-koops-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white mb-4">Service Packages</h2>
+            <p class="text-xl text-gray-300">Save more with our comprehensive service bundles</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Package -->
+            <div class="bg-koops-gray rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                <div class="text-4xl text-koops-green mb-6">
+                    <i class="fas fa-bronze"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Basic Care</h3>
+                <div class="text-3xl font-bold text-koops-green mb-6">₱2,500</div>
+                <ul class="text-left space-y-3 text-gray-300 mb-8">
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Oil Change</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Chain Lubrication</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Basic Inspection</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Tire Pressure Check</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Fluid Top-up</li>
+                </ul>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    CHOOSE PACKAGE
+                </button>
+            </div>
+            
+            <!-- Premium Package -->
+            <div class="bg-gradient-to-b from-koops-green to-green-600 rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300 relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-koops-dark px-4 py-2 rounded-full text-sm font-bold">
+                    MOST POPULAR
+                </div>
+                <div class="text-4xl text-koops-dark mb-6">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-koops-dark mb-4">Premium Care</h3>
+                <div class="text-3xl font-bold text-koops-dark mb-6">₱5,500</div>
+                <ul class="text-left space-y-3 text-koops-dark mb-8">
+                    <li><i class="fas fa-check text-koops-dark mr-2"></i>Everything in Basic</li>
+                    <li><i class="fas fa-check text-koops-dark mr-2"></i>Brake Service</li>
+                    <li><i class="fas fa-check text-koops-dark mr-2"></i>Engine Diagnostic</li>
+                    <li><i class="fas fa-check text-koops-dark mr-2"></i>Safety Inspection</li>
+                    <li><i class="fas fa-check text-koops-dark mr-2"></i>Performance Check</li>
+                    <li><i class="fas fa-check text-koops-dark mr-2"></i>6-Month Warranty</li>
+                </ul>
+                <button class="w-full bg-koops-dark text-koops-green py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors">
+                    CHOOSE PACKAGE
+                </button>
+            </div>
+            
+            <!-- Ultimate Package -->
+            <div class="bg-koops-gray rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                <div class="text-4xl text-koops-green mb-6">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Ultimate Care</h3>
+                <div class="text-3xl font-bold text-koops-green mb-6">₱9,999</div>
+                <ul class="text-left space-y-3 text-gray-300 mb-8">
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Everything in Premium</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Performance Tuning</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Custom Modifications</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Priority Booking</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>Free Pickup/Delivery</li>
+                    <li><i class="fas fa-check text-koops-green mr-2"></i>1-Year Warranty</li>
+                </ul>
+                <button class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    CHOOSE PACKAGE
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - FOOTER SECTION
+     ======================================== -->
+<footer class="bg-koops-gray py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold text-koops-green mb-4">KOOPSIKLO</h3>
+                <p class="text-gray-300">Your premium motorcycle destination. Adventure starts here.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="#motorcycles" class="hover:text-koops-green">Motorcycles</a></li>
+                    <li><a href="#services" class="hover:text-koops-green">Services</a></li>
+                    <li><a href="#parts" class="hover:text-koops-green">Parts</a></li>
+                    <li><a href="#preowned" class="hover:text-koops-green">Pre-Owned</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Support</h4>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="#portal" class="hover:text-koops-green">Customer Portal</a></li>
+                    <li><a href="#stores" class="hover:text-koops-green">Find a Store</a></li>
+                    <li><a href="#contact" class="hover:text-koops-green">Contact Us</a></li>
+                    <li><a href="#warranty" class="hover:text-koops-green">Warranty</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-koops-green hover:text-green-400 text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-koops-green hover:text-green-400 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-koops-green hover:text-green-400 text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+            <p>&copy; 2024 KOOPSIKLO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ========================================
+     CSS/SCSS STYLES - CUSTOM ANIMATIONS AND RESPONSIVE DESIGN
+     ======================================== -->
+<style>
+/* Smooth scrolling for navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Service card animations */
+.service-card, .service-category {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover, .service-category:hover {
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+}
+
+/* Service tab animations */
+.service-tab {
+    transition: all 0.3s ease;
+}
+
+.service-tab.active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Booking form focus states */
+input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+/* Package card special effects */
+.package-popular {
+    position: relative;
+    overflow: hidden;
+}
+
+.package-popular::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .text-7xl {
+        font-size: 3rem;
+    }
+    
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .service-card, .service-category {
+        margin-bottom: 1rem;
+    }
+    
+    .grid.grid-cols-1.md\\:grid-cols-5 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Pulse animation for booking button */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Service status indicators */
+.status-indicator {
+    position: relative;
+}
+
+.status-indicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ff88;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+</style>
+
+<!-- ========================================
+     JAVASCRIPT/TYPESCRIPT - INTERACTIVE FUNCTIONALITY
+     ======================================== -->
+<script>
+// ========================================
+// MOBILE NAVIGATION FUNCTIONALITY
+// ========================================
+class MobileNavigation {
+    constructor() {
+        this.mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        this.mobileMenu = document.getElementById('mobile-menu');
+        this.isOpen = false;
+        
+        this.init();
+    }
+    
+    init() {
+        this.mobileMenuBtn.addEventListener('click', () => {
+            this.toggleMenu();
+        });
+        
+        const mobileLinks = this.mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                this.closeMenu();
+            });
+        });
+    }
+    
+    toggleMenu() {
+        if (this.isOpen) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+    
+    openMenu() {
+        this.mobileMenu.classList.remove('hidden');
+        this.mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+        this.isOpen = true;
+    }
+    
+    closeMenu() {
+        this.mobileMenu.classList.add('hidden');
+        this.mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+        this.isOpen = false;
+    }
+}
+
+// ========================================
+// QUICK BOOKING FUNCTIONALITY
+// ========================================
+class QuickBooking {
+    constructor() {
+        this.serviceType = document.getElementById('service-type');
+        this.motorcycleModel = document.getElementById('motorcycle-model');
+        this.preferredDate = document.getElementById('preferred-date');
+        this.timeSlot = document.getElementById('time-slot');
+        this.bookServiceBtn = document.getElementById('book-service-btn');
+        
+        this.init();
+    }
+    
+    init() {
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        this.preferredDate.min = today;
+        
+        this.bookServiceBtn.addEventListener('click', () => {
+            this.processBooking();
+        });
+        
+        // Real-time validation
+        [this.serviceType, this.motorcycleModel, this.preferredDate, this.timeSlot].forEach(field => {
+            field.addEventListener('change', () => {
+                this.validateForm();
+            });
+        });
+    }
+    
+    validateForm() {
+        const isValid = this.serviceType.value && 
+                       this.motorcycleModel.value && 
+                       this.preferredDate.value && 
+                       this.timeSlot.value;
+        
+        if (isValid) {
+            this.bookServiceBtn.classList.remove('opacity-50');
+            this.bookServiceBtn.disabled = false;
+            this.bookServiceBtn.classList.add('pulse-animation');
+        } else {
+            this.bookServiceBtn.classList.add('opacity-50');
+            this.bookServiceBtn.disabled = true;
+            this.bookServiceBtn.classList.remove('pulse-animation');
+        }
+    }
+    
+    processBooking() {
+        const bookingData = {
+            serviceType: this.serviceType.value,
+            motorcycleModel: this.motorcycleModel.value,
+            preferredDate: this.preferredDate.value,
+            timeSlot: this.timeSlot.value
+        };
+        
+        // Show loading state
+        this.bookServiceBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>BOOKING...';
+        this.bookServiceBtn.disabled = true;
+        
+        // Simulate booking process
+        setTimeout(() => {
+            this.showBookingConfirmation(bookingData);
+            this.resetForm();
+        }, 2000);
+    }
+    
+    showBookingConfirmation(data) {
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+        modal.innerHTML = `
+            <div class="bg-koops-dark rounded-xl p-8 max-w-md mx-4 text-center">
+                <div class="text-6xl text-koops-green mb-4">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Booking Confirmed!</h3>
+                <div class="text-gray-300 space-y-2 mb-6">
+                    <p><strong>Service:</strong> ${data.serviceType}</p>
+                    <p><strong>Motorcycle:</strong> ${data.motorcycleModel}</p>
+                    <p><strong>Date:</strong> ${new Date(data.preferredDate).toLocaleDateString()}</p>
+                    <p><strong>Time:</strong> ${data.timeSlot}</p>
+                </div>
+                <p class="text-sm text-gray-400 mb-6">
+                    We'll send you a confirmation email with all the details.
+                </p>
+                <button onclick="this.closest('.fixed').remove()" class="bg-koops-green text-koops-dark px-6 py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                    CLOSE
+                </button>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+    }
+    
+    resetForm() {
+        this.serviceType.value = '';
+        this.motorcycleModel.value = '';
+        this.preferredDate.value = '';
+        this.timeSlot.value = '';
+        this.bookServiceBtn.innerHTML = '<i class="fas fa-calendar-plus mr-2"></i>BOOK NOW';
+        this.bookServiceBtn.disabled = false;
+        this.validateForm();
+    }
+}
+
+// ========================================
+// SERVICE CATEGORY INTERACTIONS
+// ========================================
+class ServiceCategories {
+    constructor() {
+        this.categories = document.querySelectorAll('.service-category');
+        
+        this.init();
+    }
+    
+    init() {
+        this.categories.forEach(category => {
+            category.addEventListener('click', () => {
+                const categoryType = category.dataset.category;
+                this.showCategoryDetails(categoryType);
+            });
+        });
+    }
+    
+    showCategoryDetails(categoryType) {
+        // Scroll to detailed services section
+        document.getElementById('detailed-services').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+        
+        // Filter services by category
+        setTimeout(() => {
+            const serviceTab = document.querySelector(`[data-service="${categoryType}"]`);
+            if (serviceTab) {
+                serviceTab.click();
+            }
+        }, 500);
+    }
+}
+
+// ========================================
+// SERVICE TABS FUNCTIONALITY
+// ========================================
+class ServiceTabs {
+    constructor() {
+        this.tabs = document.querySelectorAll('.service-tab');
+        this.serviceCards = document.querySelectorAll('.service-card');
+        
+        this.init();
+    }
+    
+    init() {
+        this.tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                this.switchTab(tab);
+            });
+        });
+    }
+    
+    switchTab(activeTab) {
+        const service = activeTab.dataset.service;
+        
+        // Update tab appearance
+        this.tabs.forEach(tab => {
+            tab.classList.remove('active', 'bg-koops-green', 'text-koops-dark');
+            tab.classList.add('bg-koops-dark', 'text-white');
+        });
+        
+        activeTab.classList.add('active', 'bg-koops-green', 'text-koops-dark');
+        activeTab.classList.remove('bg-koops-dark', 'text-white');
+        
+        // Filter service cards
+        this.filterServices(service);
+    }
+    
+    filterServices(service) {
+        let visibleCount = 0;
+        
+        this.serviceCards.forEach(card => {
+            if (service === 'all' || card.dataset.service === service) {
+                card.style.display = 'block';
+                card.classList.add('fade-in-up');
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+                card.classList.remove('fade-in-up');
+            }
+        });
+        
+        this.updateServiceCount(visibleCount);
+    }
+    
+    updateServiceCount(count) {
+        let countMsg = document.getElementById('service-count');
+        if (!countMsg) {
+            countMsg = document.createElement('div');
+            countMsg.id = 'service-count';
+            countMsg.className = 'text-center text-gray-300 mb-8';
+            document.getElementById('services-grid').parentNode.insertBefore(countMsg, document.getElementById('services-grid'));
+        }
+        
+        countMsg.textContent = `Showing ${count} service${count !== 1 ? 's' : ''}`;
+    }
+}
+
+// ========================================
+// SERVICE BOOKING FUNCTIONALITY
+// ========================================
+class ServiceBooking {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        // Individual service booking buttons
+        const bookButtons = Array.from(document.querySelectorAll('button')).filter(btn => 
+            btn.textContent.includes('BOOK SERVICE')
+        );
+        
+        bookButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = e.target.closest('.service-card');
+                if (card) {
+                    const serviceName = card.querySelector('h3').textContent;
+                    const servicePrice = card.dataset.price;
+                    this.showServiceBookingModal(serviceName, servicePrice);
+                }
+            });
+        });
+        
+        // Package booking buttons
+        const packageButtons = Array.from(document.querySelectorAll('button')).filter(btn => 
+            btn.textContent.includes('CHOOSE PACKAGE')
+        );
+        
+        packageButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const packageCard = e.target.closest('div');
+                const packageName = packageCard.querySelector('h3').textContent;
+                const packagePrice = packageCard.querySelector('.text-3xl').textContent;
+                this.showPackageBookingModal(packageName, packagePrice);
+            });
+        });
+    }
+    
+    showServiceBookingModal(serviceName, price) {
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+        modal.innerHTML = `
+            <div class="bg-koops-dark rounded-xl p-8 max-w-md mx-4">
+                <h3 class="text-2xl font-bold text-white mb-4">Book ${serviceName}</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                        <input type="text" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Motorcycle Model</label>
+                        <input type="text" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Preferred Date</label>
+                        <input type="date" min="${new Date().toISOString().split('T')[0]}" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                    <div class="bg-koops-gray rounded-lg p-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-white">Service Cost:</span>
+                            <span class="text-koops-green font-bold">₱${parseInt(price).toLocaleString()}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-6">
+                    <button onclick="this.closest('.fixed').remove()" class="flex-1 bg-koops-gray text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition-colors">
+                        CANCEL
+                    </button>
+                    <button onclick="alert('Booking confirmed! We will contact you shortly.'); this.closest('.fixed').remove();" class="flex-1 bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                        CONFIRM BOOKING
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+    }
+    
+    showPackageBookingModal(packageName, price) {
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+        modal.innerHTML = `
+            <div class="bg-koops-dark rounded-xl p-8 max-w-md mx-4">
+                <h3 class="text-2xl font-bold text-white mb-4">Choose ${packageName}</h3>
+                <div class="text-center mb-6">
+                    <div class="text-4xl text-koops-green mb-2">${price}</div>
+                    <p class="text-gray-300">Complete service package</p>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                        <input type="text" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Motorcycle Model</label>
+                        <input type="text" class="w-full px-4 py-3 bg-koops-gray text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none">
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-6">
+                    <button onclick="this.closest('.fixed').remove()" class="flex-1 bg-koops-gray text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition-colors">
+                        CANCEL
+                    </button>
+                    <button onclick="alert('Package selected! Our team will contact you to schedule all services.'); this.closest('.fixed').remove();" class="flex-1 bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                        SELECT PACKAGE
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+    }
+}
+
+// ========================================
+// APPLICATION INITIALIZATION
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all components
+    new MobileNavigation();
+    new QuickBooking();
+    new ServiceCategories();
+    new ServiceTabs();
+    new ServiceBooking();
+    
+    // Add intersection observer for animations
+    const cards = document.querySelectorAll('.service-card, .service-category');
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => {
+        cardObserver.observe(card);
+    });
+    
+    console.log('KOOPSIKLO Services page initialized successfully! 🔧');
+});
+
+// ========================================
+// UTILITY FUNCTIONS
+// ========================================
+const Utils = {
+    formatCurrency(amount) {
+        return new Intl.NumberFormat('en-PH', {
+            style: 'currency',
+            currency: 'PHP'
+        }).format(amount);
+    },
+    
+    formatDate(dateString) {
+        return new Date(dateString).toLocaleDateString('en-PH', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    },
+    
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+};
+</script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95b3a6d1f6cab9f9',t:'MTc1MTg1MjYxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
